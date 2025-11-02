@@ -18,8 +18,12 @@
     change the text javascript in the paragraph to JAVASCRIPT.
 -->
 <script>
-
-
+    document.getElementById("btn").onclick = function(){
+        let outer = document.getElementById("out");
+        let text = outer.innerHTML;
+        let newText = text.replace(/javascript/g, "JAVASCRIPT");
+        outer.innerHTML = newText;
+    }
 
 </script>
 
