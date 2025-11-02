@@ -9,6 +9,8 @@ let st = `063-111-1234
 (333) 456-8768
 4446575547`;
 
+let formatted = st.replace(/\(?(\d{3})\)?[-\s]?(\d{3})[-\s]?(\d{4})/g, '($1) $2 $3');
 
+console.log(formatted);
 
 
