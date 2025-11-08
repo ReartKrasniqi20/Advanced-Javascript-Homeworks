@@ -11,7 +11,7 @@ function getUsers() {
       return users;
     },
     getUsers: function() {
-      return users;
+      return [...users];
     }
   };
 }
@@ -19,7 +19,9 @@ function getUsers() {
 const u = getUsers();
 u.addUser("Jim");
 u.addUser("Paul");
-console.log(u.getUsers()); // will put out [ 'Bill', 'Jim', 'Paul' ]
 
+console.log(u.getUsers()); // will put out [ 'Bill', 'Jim', 'Paul' ]
+u.getUsers().push("Reart");
 u.getUsers().pop(); // delete 2nd element of the array
 console.log(u.getUsers()); //  ['Bill', 'Jim']
+
