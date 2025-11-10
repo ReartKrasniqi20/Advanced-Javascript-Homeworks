@@ -30,20 +30,31 @@
 
     // TODO: Write your code below 👇
 
-    function sumAll(...args){
-        let total = 0;
-        for(let num of args){
-            if(isNaN(num)) continue;
-                
-            total+=num;
-        }
-        return total;
+function sumAll(...args){
+    let total = 0;
+    for(let num of args){
+        if(isNaN(num)) continue;
+        total += num;
+    }
+    return total;
+}
+
+const btn = document.getElementById("calcBtn");
+
+btn.addEventListener("click", () => {
+    const input = document.getElementById("numbersInput").value;
+    const numbers = input
+        .split(",")
+        .map(str => str.trim())
+        .filter(str => str !== "")
+        .map(str => Number(str))
+        .filter(num => !isNaN(num));
+
+    if(numbers.length === 0){
+        document.getElementById("result").innerHTML = "Please enter at least one valid number!";
+        return;
     }
 
-    const btn = document.getElementById("calcBtn");
-   btn.addEventListener("click", () => {
-    const input = document.getElementById("numbersInput").value;
-    const numbers = input.split(",").map(str => Number(str.trim()));
     const total = sumAll(...numbers);
     document.getElementById("result").innerHTML = "The total is: " + total;
 });
