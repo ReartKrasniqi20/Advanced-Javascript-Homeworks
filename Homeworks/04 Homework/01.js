@@ -32,8 +32,8 @@ class BankAccount{
     withdraw(value){
         if(this.#balance<value){
             console.log("You don't have enough money, actual money in bank: "+this.#balance);
+            return;
         }else{
-            
             this.#balance-=value;
             console.log("Balance updated after withdraw: "+this.#balance);
         }
