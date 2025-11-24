@@ -53,12 +53,12 @@ class Manager extends Employee {
     }
 }
 
-const emp1 = new Employee("Arti", 1200);
+const emp1 = new Employee("Person1", 1200);
 console.log("Employee Info");
 emp1.info();
 
 console.log("\n Manager Info");
-const manager1 = new Manager("Reart", 2500, "IT Department");
+const manager1 = new Manager("Person2", 2500, "IT Department");
 manager1.info();
 
 
